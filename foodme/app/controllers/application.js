@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
 
-	appName: 'FoodMe',
+	appName: 'moldingFest',
 
 	menuLinks: [{
 		label: 'restaurants',

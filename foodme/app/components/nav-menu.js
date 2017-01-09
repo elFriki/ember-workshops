@@ -12,7 +12,7 @@ export default Ember.Component.extend({
 
 	tagName: 'nav',
 
-	classNames: ['navbar', 'navbar-default'],
+	classNames: ['navbar', 'navbar-default', 'navbar-inverse'],
 
 	isMenuOpened: false,
 
@@ -26,9 +26,9 @@ export default Ember.Component.extend({
 		this.set('i18n.locale', this.get('selectedLanguage.code'));
 	}),
 
-	actions: {
-		toggleMenu(){
+	actions:  {
+		toggleMenu() {
 			this.toggleProperty('isMenuOpened');
- 		}
+		}
 	}
 });

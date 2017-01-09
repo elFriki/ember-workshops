@@ -1,41 +1,62 @@
 <div class="row-fluid">
 
 	<div class="page-header">
-		<h1>{{model.name}}</h1>
+		<h1>
+			{{link-to "" "index" class="span glyphicon glyphicon-list-alt"}}
+			{{model.name}}
+		</h1>
 	</div>
 
-	<div class="col-md-3">
+	<div class="col-md-4">
 		<img src="{{restaurant-img model.id}}" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-		<h4><i class="glyphicon glyphicon-star"></i> Rating: {{model.rating}}</h4>
-		<h4><i class="glyphicon glyphicon-usd"></i> Price: {{model.price}}</h4>
-		<span class="text-muted"><i class="glyphicon glyphicon-tag"></i> {{model.cuisine}}</span>
-	</div>
 
-	<div class="col-md-9">
-
-		<h3>{{t 'description'}}</h3>
-		{{model.description}}
-
-		<h3>{{t 'location'}}</h3>
-		{{model.location}}
-
-		<h3>{{t 'openingHours'}}</h3>
-		<ul>
-			<li>Opens/Closes: {{model.opens}} - {{model.closes}}</li>
-			<li>
-				Days opened:
-				<ul>
-					{{#each model.days as |day|}}
-						<li>{{capitalize (t (concat 'weekDays.' (weekday day)))}}</li>
-					{{/each}}
-				</ul>
-			</li>
+		<ul class="list-group">
+		  <li class="list-group-item active">{{model.description}}</li>
+			  <li class="list-group-item">
+			    <span class="badge list-group-item-warning"><i class="glyphicon glyphicon-tag"></i></span>
+			    {{capitalize model.cuisine}}
+			  </li>
+			  <li class="list-group-item">
+			    <span class="badge list-group-item-warning"><i class="glyphicon glyphicon-map-marker"></i></span>
+			    {{capitalize model.location}}
+			  </li>
+			  <li class="list-group-item">
+			    <span class="badge list-group-item-warning"><i class="glyphicon glyphicon-heart"></i></span>
+			    {{star-rating rating=model.rating}}
+			  </li>
+			  <li class="list-group-item">
+			    <span class="badge list-group-item-warning"><i class="glyphicon glyphicon-eur"></i></span>
+			    {{star-rating rating=model.price}}
+			  </li>
 		</ul>
 
-		<h3>{{t 'menu'}}</h3>
-		<ul>
+
+	</div>
+
+	<div class="col-md-8">
+
+		<p></p>
+
+
+		<ul class="list-group">
+		  <li class="list-group-item active">{{t 'openingHours'}}</li>
+			{{#each model.days as |day|}}
+			  <li class="list-group-item">
+			    <span class="badge list-group-item-danger">{{model.closes}}</span>
+			    <span class="badge list-group-item-success">{{model.opens}}</span>
+			    {{capitalize (t (concat 'weekDays.' (weekday day)))}}
+			  </li>
+			{{/each}}
+		</ul>
+
+
+		<ul class="list-group">
+		  <li class="list-group-item active">{{t 'menu'}}</li>
 			{{#each model.menuItems as |item|}}
-				<li>{{capitalize item.name}} <span class="text-muted">{{item.price}} €</span></li>
+			  <li class="list-group-item">
+			    <span class="badge list-group-item-warning">{{item.price}} €</span>
+			    {{capitalize item.name}}
+			  </li>
 			{{/each}}
 		</ul>
 
