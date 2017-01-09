@@ -6,6 +6,12 @@ const languages = [{
 }, {
 	name: 'English',
 	code: 'en'
+}, {
+	name: 'Portugues',
+	code: 'pt'
+}, {
+	name: 'Francês',
+	code: 'fr'
 }];
 
 export default Ember.Component.extend({

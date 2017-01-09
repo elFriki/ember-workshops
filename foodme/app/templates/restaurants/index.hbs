@@ -1,18 +1,27 @@
-<div class="row-fluid">
 
-	<div class="col-md-4">
+	<div class="col-md-3">
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				<h3 class="panel-title">{{t 'filterRestaurants'}}</h3>
+
+				<ul class="list-group">
+				  <li class="list-group-item">
+				    <button {{action 'clear'}} class="badge list-group-item-danger"><i class="glyphicon glyphicon-erase"></i></button>
+				    <i class="glyphicon glyphicon-filter"></i> {{t "restaurants"}}
+				  </li>
+				</ul>
+
+			</div>
+			<div class="panel-body">
+				{{input value=filterName placeholder=(t 'name') class="form-control"}}
 			</div>
 
 			<div class="panel-body">
-				<label>{{t 'rating'}}</label>
-				{{star-rating rating=filterRating on-click='updateRating'}}
+				<table><th><td><i class="label label-info"><i class="glyphicon glyphicon-heart"></i></i></td><td>{{star-rating rating=filterRating on-click='updateRating'}}</td><td><span class="label label-info">{{capitalize restaurant.cuisine}}</span></td></th></table>
+				<table><th><td><i class="label label-danger"><i class="glyphicon glyphicon-eur"></i></i></td><td>{{star-rating rating=filterRating on-click='updateRating'}}</td></th></table>
+
 			</div>
 
 			<div class="panel-body">
-				<label>{{t 'cuisine'}}</label>
 				{{#power-select-multiple
 					options=CUISINE_OPTIONS
 					selected=filterCuisins
@@ -23,22 +32,22 @@
 				{{/power-select-multiple}}
 			</div>
 
-			<div class="panel-body">
-				<label>{{t 'name'}}</label>
-				{{input value=filterName placeholder=(t 'name') class="form-control"}}
-			</div>
 
 			<div class="panel-footer">
-				<button {{action 'clear'}} class="btn btn-link">{{t 'clear'}}</button>
+
+
+				<div class="progress">
+				  <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%">
+				    <span class="sr-only">45% Complete</span>{{filteredRestaurants.length}}
+				  </div>
+				</div>
+
 			</div>
 		</div>
-	</div>
 
-	<div class="col-md-8">
+	</div>
+	<div class="col-md-6">
 		<div class="panel panel-default">
-			<div class="panel-heading">
-				<h3 class="panel-title">{{t 'foundRestaurants' count=filteredRestaurants.length}}</h3>
-			</div>
 
 			<div class="panel-body">
 				{{#each filteredRestaurants as |restaurant| }}
@@ -48,13 +57,11 @@
 						</a>
 						<div class="media-body">
 							{{link-to restaurant.name 'restaurants.detail' restaurant}}
-<table><th><td></td><td>{{star-rating rating=restaurant.rating}}</td><td><i class="glyphicon glyphicon-tag"></i></td><td><span class="label label-info">{{capitalize restaurant.cuisine}}</span></td></th></table>
-<table><th><td>{{star-rating rating=restaurant.price}}</td><td><i class="label label-danger">€</i></td></th></table>
+<table><th><td><i class="label label-info"><i class="glyphicon glyphicon-heart"></i></i></td><td>{{star-rating rating=restaurant.rating}}</td><td><span class="label label-info">{{capitalize restaurant.cuisine}}</span></td></th></table>
+<table><th><td><i class="label label-danger"><i class="glyphicon glyphicon-eur"></i></i></td><td>{{star-rating rating=restaurant.price}}</td></th></table>
 						</div>
 					</div>
-					<hr>
 				{{/each}}
 			</div>
 		</div>
 	</div>
-</div>

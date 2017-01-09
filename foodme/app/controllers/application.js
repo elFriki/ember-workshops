@@ -7,7 +7,13 @@ export default Ember.Controller.extend({
 	menuLinks: [{
 		label: 'restaurants',
 		url: 'restaurants'
+/*	}, {
+		label: 'festivales',
+		url: 'festivals'
 	}, {
+		label: 'artistas',
+		url: 'artists'
+*/	}, {
 		label: 'about',
 		url: 'about'
 	}]

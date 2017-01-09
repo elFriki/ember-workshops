@@ -19,10 +19,8 @@
     	{{! Menu links}}
         <ul class="nav navbar-nav">
         	{{#each menuLinks as |link|}}
-        		<li>
-            		{{link-to (t link.label) link.url}}
-            	</li>
-            {{/each}}
+        		<li>{{link-to (t link.label) link.url}}</li>
+          {{/each}}
         </ul>
 
     	{{! ChangeLanguage}}
