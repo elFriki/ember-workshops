@@ -1,0 +1,70 @@
+<div class="container-fluid">
+<div class="panel panel-primary" style="background-image:url('{{restaurant-img model.id}}'); background-repeat:no-repeat; background-size: cover;">
+
+<div class="panel-heading" style="opacity:0.6">
+  <h2>
+    <span class="badge list-group-item-warning">{{link-to "" "festivals" class="span glyphicon glyphicon-backward"}}</span>
+    <strong>{{model.name}}</strong>
+  </h2>
+</div>
+
+<div class="panel-body">
+
+<div class="col-md-6">
+
+	<ul class="list-group">
+    <li class="list-group-item active" style="opacity:0.6"><strong>{{model.name}}</strong></li>
+    <li class="list-group-item" style="opacity:0.9"><strong>{{model.description}}</strong></li>
+
+    <li class="list-group-item" style="opacity:0.6">
+		    <span class="badge list-group-item-warning"><i class="glyphicon glyphicon-tag"></i></span>
+		    <strong>{{capitalize model.cuisine}}</strong>
+		  </li>
+      <li class="list-group-item" style="opacity:0.6">
+		    <span class="badge list-group-item-warning"><i class="glyphicon glyphicon-map-marker"></i></span>
+		    <strong>{{capitalize model.location}}</strong>
+		  </li>
+      <li class="list-group-item" style="opacity:0.6">
+		    <span class="badge list-group-item-danger"><i class="glyphicon glyphicon-heart"></i></span>
+		    <strong>{{star-rating rating=model.rating}}</strong>
+		  </li>
+      <li class="list-group-item" style="opacity:0.6">
+		    <span class="badge list-group-item-warning"><i class="glyphicon glyphicon-eur"></i></span>
+		    <strong>{{star-rating rating=model.price}}</strong>
+		  </li>
+
+	    <li class="list-group-item active" style="opacity:0.6">
+			{{t 'openingHours'}}
+		</li>
+		{{#each model.days as |day|}}
+    <li class="list-group-item" style="opacity:0.6">
+		    <span class="badge list-group-item-danger">{{model.closes}}</span>
+		    <span class="badge list-group-item-success">{{model.opens}}</span>
+		    {{capitalize (t (concat 'weekDays.' (weekday day)))}}
+		  </li>
+		{{/each}}
+	</ul>
+
+</div>
+
+
+<div class="col-md-6">
+
+	<ul class="list-group">
+	  <li class="list-group-item active"  style="opacity:0.6">
+			<strong>{{t 'artists'}}</strong>
+		</li>
+		{{#each model.menuItems as |item|}}
+      <li class="list-group-item" style="opacity:0.6">
+		    <span class="badge list-group-item-warning">{{item.price}} €</span>
+		    <strong>{{capitalize item.name}}</strong>
+		  </li>
+		{{/each}}
+	</ul>
+
+</div>
+
+
+</div>
+</div>
+</div>

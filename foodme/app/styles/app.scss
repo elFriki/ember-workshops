@@ -1,6 +1,10 @@
 //@import 'ember-power-select/themes/material';
 @import 'ember-power-select';
 
+body {
+  background:radial-gradient(circle, white, lightgrey);
+}
+
 .navbar-nav>li.for-button {
   padding-top: 15px;
   padding-bottom: 15px;

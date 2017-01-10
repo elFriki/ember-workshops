@@ -4,16 +4,16 @@ export default Ember.Controller.extend({
 
 	appName: 'moldingFest',
 
-	menuLinks: [{
+	menuLinks: [/*{
 		label: 'restaurants',
 		url: 'restaurants'
-/*	}, {
-		label: 'festivales',
+	},*/ {
+		label: 'festivals',
 		url: 'festivals'
 	}, {
-		label: 'artistas',
+		label: 'artists',
 		url: 'artists'
-*/	}, {
+	}, {
 		label: 'about',
 		url: 'about'
 	}]

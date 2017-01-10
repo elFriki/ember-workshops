@@ -38,6 +38,8 @@ export default {
 	"rating": "Valoración",
 
 	"restaurants": "Restaurantes",
+	"festivals": "Festivales",
+	"artists": "Artistas",
 
 	"selectCuisins": "Selecciona tipo de cocina...",
 
