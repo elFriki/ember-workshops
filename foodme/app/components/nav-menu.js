@@ -1,18 +1,10 @@
 import Ember from 'ember';
-
-const languages = [{
-	name: 'Español',
-	code: 'es'
-}, {
-	name: 'English',
-	code: 'en'
-}, {
-	name: 'Portugues',
-	code: 'pt'
-}, {
-	name: 'Francês',
-	code: 'fr'
-}];
+const languages= [
+	{ name: 'ES', code: 'es', flagUrl: 'http://www.ember-power-select.com/flags/es.svg' },
+	{ name: 'UK', code: 'en', flagUrl: 'http://www.ember-power-select.com/flags/gb.svg' },
+	{ name: 'FR', code: 'fr', flagUrl: 'http://www.ember-power-select.com/flags/fr.svg' },
+	{ name: 'PT', code: 'pt', flagUrl: 'http://www.ember-power-select.com/flags/pt.svg' }
+];
 
 export default Ember.Component.extend({
 

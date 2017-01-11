@@ -32,7 +32,7 @@
 					class='dropdown'
 					onchange=(action (mut selectedLanguage))
 					as |language|}}
-					{{language.name}}
+<span><img src="{{language.flagUrl}}" class="icon-flag"> {{language.name}}</span>
 				{{/power-select}}
 			</li>
 		</ul>

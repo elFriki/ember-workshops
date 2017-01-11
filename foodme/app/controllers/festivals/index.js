@@ -25,16 +25,19 @@ export default Ember.Controller.extend({
      */
     filterCuisins: [],
     filterRating: null,
+    filterPrice: null,
     filterName: null,
 
     /**
      * Filter function.
      */
-    filteredFestivals: Ember.computed('model', 'filterCuisins', 'filterRating', 'filterName', function() {
+    filteredFestivals: Ember.computed('model', 'filterCuisins', 'filterRating',
+    'filterPrice', 'filterName', function() {
         let filteredFestivals = this.get('model');
 
         const filterCuisins = this.get('filterCuisins');
         const filterRating = this.get('filterRating');
+        const filterPrice = this.get('filterPrice');
         const filterName = this.get('filterName');
 
         // Filter by cuisine
@@ -49,14 +52,25 @@ export default Ember.Controller.extend({
             filteredFestivals = filteredFestivals.filterBy('rating', filterRating);
         }
 
+        // Filter by price
+        if (filterPrice) {
+            filteredFestivals = filteredFestivals.filterBy('price', filterPrice);
+        }
+
         // Filter by name
         if (filterName) {
-            filteredFestivals = filteredFestivals.filter((restaurant) =>
-            	restaurant.name.toLowerCase().includes(filterName.toLowerCase())
+            filteredFestivals = filteredFestivals.filter((festival) =>
+            	festival.name.toLowerCase().includes(filterName.toLowerCase())
             );
         }
 
         return filteredFestivals;
+    }),
+    cienXcien: Ember.computed('porcentaje', function(){
+      if (this.get('porcentaje') === 100) {
+        return true;
+      }
+      return false;
     }),
 
     porcentaje: Ember.computed('filteredFestivals', 'model',
@@ -68,16 +82,35 @@ export default Ember.Controller.extend({
 
     actions: {
 
+      clearRating() {
+        this.set('filterRating', null);
+        //this.set('filteredFestivals', this.get('model'));
+      },
+
+      clearPrice() {
+        this.set('filterPrice', null);
+        //this.set('filteredFestivals', this.get('model'));
+      },
+
+      clearName() {
+        this.set('filterName', null);
+        //this.set('filteredFestivals', this.get('model'));
+      },
+
     	clear() {
-    		this.set('filterCuisins', []);
+    		this.set('filterPrice', null);
     		this.set('filterRating', null);
     		this.set('filterName', null);
-    		this.set('filteredFestivals', this.get('model'));
+    		//this.set('filteredFestivals', this.get('model'));
     	},
 
-        updateRating(stars) {
-            this.set('filterRating', stars.rating);
-        }
+      updateRating(stars) {
+          this.set('filterRating', stars.rating);
+      },
+
+      updatePrice(stars) {
+          this.set('filterPrice', stars.rating);
+      }
 
     }
 

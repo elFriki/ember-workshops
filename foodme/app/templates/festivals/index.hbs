@@ -1,28 +1,61 @@
 	<div class="col-md-3">
 
-		<ul class="list-group" style="background:radial-gradient(circle, white, lightgrey);">
-		  <li class="list-group-item active">
-		    <button {{action 'clear'}} class="badge list-group-item-danger"><i class="glyphicon glyphicon-erase"></i></button>
-		    <i class="glyphicon glyphicon-filter"></i> {{filteredFestivals.length}} {{t "festivals"}}
+		<ul class="list-group">
+			{{#if cienXcien}}
+			<li class="list-group-item active">
+				<span class="badge list-group-item-warning">
+					<i class="glyphicon glyphicon-filter"></i>
+				</span>
+		    {{filteredFestivals.length}} {{t "festivals"}}
 		  </li>
+			{{else}}
+		  <li class="list-group-item" style="opacity:0.6">
+				<span class="badge list-group-item-warning">
+					<i class="glyphicon glyphicon-filter"></i>
+				</span>
+				<span class="badge btn btn-danger">
+					<i class="glyphicon glyphicon-remove" {{action 'clear'}}></i>
+				</span>
+		    <strong>{{filteredFestivals.length}} {{t "festivals"}}</strong>
+		  </li>
+			{{/if}}
 			<li class="list-group-item" style="opacity:0.6">
+				<span class="badge list-group-item-warning">
+					<i class="glyphicon glyphicon-sort-by-alphabet-alt"></i>
+				</span>
+				{{#if filterName}}
+					<span class="badge btn btn-danger">
+					<i class="glyphicon glyphicon-remove" {{action 'clearName'}}></i>
+					</span>
+				{{/if}}
 				<div class="input-group">
 					{{input value=filterName placeholder=(t 'name') class="form-control" aria-describedby="nameFilter"}}
-					<span class="input-group-addon list-group-item-warning"><i class="glyphicon glyphicon-sort-by-alphabet-alt"></i></span>
 				</div>
 		  </li>
 			<li class="list-group-item" style="opacity:0.6">
-				<span class="badge list-group-item-warning"><i class="glyphicon glyphicon-heart"></i></span>
+				<span class="badge list-group-item-warning">
+					<i class="glyphicon glyphicon-heart"></i>
+				</span>
+				{{#if filterRating}}
+					<span class="badge btn btn-danger">
+					<i class="glyphicon glyphicon-remove" {{action 'clearRating'}}></i>
+					</span>
+				{{/if}}
 		    {{star-rating rating=filterRating on-click='updateRating'}}
 			</li>
 			<li class="list-group-item" style="opacity:0.6">
 				<span class="badge list-group-item-warning"><i class="glyphicon glyphicon-eur"></i></span>
-		    {{star-rating rating=filterRating on-click='updateRating'}}
+				{{#if filterPrice}}
+					<span class="badge btn btn-danger">
+					<i class="glyphicon glyphicon-remove" {{action 'clearPrice'}}></i>
+					</span>
+				{{/if}}
+		    {{star-rating rating=filterPrice on-click='updatePrice'}}
 			</li>
 			<li class="list-group-item" style="opacity:0.6">
 				<div class="progress">
 				  <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: {{porcentaje}}%">
-				    <span class="sr-only"></span>{{porcentaje}}%
+				    <span class="sr-only"></span>{{#if cienXcien}}{{porcentaje}}%{{/if}}
 				  </div><span class="badge list-group-item-warning">{{porcentaje}}%</span>
 				</div>
 			</li>
@@ -34,8 +67,8 @@
 {{#each filteredFestivals as |festival| }}
 	<div class="col-md-3" >
 		<ul class="list-group" style="background-image:url('{{restaurant-img festival.id}}'); background-repeat:no-repeat; background-size: cover;">
-			<a class="list-group-item" href="#/festivals/detail/{{festival.id}}" style="opacity:0.7">
-				{{festival.name}}
+			<a class="list-group-item" href="#/festivals/detail/{{festival.id}}" style="opacity:0.8">
+				<strong>{{festival.name}}</strong>
 				{{!link-to festival.name 'festivals.detail' festival}}
 			</a>
 		  <li class="list-group-item" style="opacity:0.6">
