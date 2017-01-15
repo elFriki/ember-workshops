@@ -10,7 +10,7 @@ export default Ember.Component.extend({
 
 	tagName: 'nav',
 
-	classNames: ['navbar', 'navbar-default', 'navbar-inverse'],
+	classNames: [],
 
 	isMenuOpened: false,
 

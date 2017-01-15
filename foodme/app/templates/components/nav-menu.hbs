@@ -1,5 +1,6 @@
 {{! Bootstrap Navbar }}
-<div class="container-fluid">
+<div id="custom-bootstrap-menu" class="navbar navbar-default " role="navigation">
+<div class="container-fluid ">
 
     <div class="navbar-header">
     	{{! Collapsed menu for small screens }}
@@ -21,6 +22,7 @@
         	{{#each menuLinks as |link|}}
         		<li>{{link-to (t link.label) link.url}}</li>
           {{/each}}
+            <li><a target="_blank" href="http://bootstrapdesigntools.com/tools/bootstrap-progress-bar-designer/">blog</a></li>
         </ul>
 
     	{{! ChangeLanguage}}
@@ -32,11 +34,12 @@
 					class='dropdown'
 					onchange=(action (mut selectedLanguage))
 					as |language|}}
-<span><img src="{{language.flagUrl}}" class="icon-flag"> {{language.name}}</span>
+<span><img src="{{language.flagUrl}}" class="icon-flag" alt="{{language.name}}"></span>
 				{{/power-select}}
 			</li>
 		</ul>
 
     </div>
 
+  </div>
 </div>
