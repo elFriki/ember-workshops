@@ -17,14 +17,20 @@
     "name": "Nos Alive",
     "city": "Lisboa",
     "country": "Portugal",
-    "publicado": "N"
+    "publicado": "N",
+    "fechaDesde": 1542409200000,
+    "fechaHasta": 1542409200000,
+    "fechaLimite": 1542409200000
   },
   {
     "id": 10,
     "name": "Primavera Sound",
     "city": "Barcelona",
     "country": "España",
-    "publicado": "S"
+    "publicado": "S",
+    "fechaDesde": 1542409200000,
+    "fechaHasta": 1542409200000,
+    "fechaLimite": 1542409200000
   }
 ],
   "urlspotify": "https://embed.spotify.com/?uri=spotify:artist:536BYVgOnRky0xjsPT96zl",
