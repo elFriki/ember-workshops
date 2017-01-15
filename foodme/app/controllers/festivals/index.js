@@ -18,6 +18,8 @@ const CUISINE_OPTIONS = [
 
 export default Ember.Controller.extend({
 
+    now: new Date(),
+
     CUISINE_OPTIONS,
 
     /**
@@ -77,7 +79,11 @@ export default Ember.Controller.extend({
       function(){
         let showing = this.get('filteredFestivals').length;
         let total = this.get('model').length;
-        return Math.round((showing * 100) / total);
+        if (total) {
+          return Math.round((showing * 100) / total);
+        } else {
+          return total;
+        }
     }),
 
     actions: {

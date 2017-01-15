@@ -9,7 +9,7 @@
 		    {{filteredFestivals.length}} {{t "festivals"}}
 		  </li>
 			{{else}}
-		  <li class="list-group-item" style="opacity:0.6">
+		  <li class="list-group-item">
 				<span class="badge list-group-item-warning">
 					<i class="glyphicon glyphicon-filter"></i>
 				</span>
@@ -19,7 +19,7 @@
 		    <strong>{{filteredFestivals.length}} {{t "festivals"}}</strong>
 		  </li>
 			{{/if}}
-			<li class="list-group-item" style="opacity:0.6">
+			<li class="list-group-item">
 				<span class="badge list-group-item-warning">
 					<i class="glyphicon glyphicon-sort-by-alphabet-alt"></i>
 				</span>
@@ -32,7 +32,7 @@
 					{{input value=filterName placeholder=(t 'name') class="form-control" aria-describedby="nameFilter"}}
 				</div>
 		  </li>
-			<li class="list-group-item" style="opacity:0.6">
+			<!--li class="list-group-item" style="opacity:0.6">
 				<span class="badge list-group-item-warning">
 					<i class="glyphicon glyphicon-heart"></i>
 				</span>
@@ -51,8 +51,8 @@
 					</span>
 				{{/if}}
 		    {{star-rating rating=filterPrice on-click='updatePrice'}}
-			</li>
-			<li class="list-group-item" style="opacity:0.6">
+			</li-->
+			<li class="list-group-item">
 				<div class="progress">
 				  <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: {{porcentaje}}%">
 				    <span class="sr-only"></span>{{#if cienXcien}}{{porcentaje}}%{{/if}}
@@ -66,25 +66,29 @@
 
 {{#each filteredFestivals as |festival| }}
 	<div class="col-md-3" >
-		<ul class="list-group" style="background-image:url('{{restaurant-img festival.id}}'); background-repeat:no-repeat; background-size: cover;">
-			<a class="list-group-item" href="#/festivals/detail/{{festival.id}}" style="opacity:0.8">
+		<ul class="list-group">
+			<a class="list-group-item">
 				<strong>{{festival.name}}</strong>
+				<span class="badge list-group-item-info"><i class="glyphicon glyphicon-pushpin"></i></span>
 				{{!link-to festival.name 'festivals.detail' festival}}
 			</a>
-		  <li class="list-group-item" style="opacity:0.6">
-		    <span class="badge list-group-item-warning"><i class="glyphicon glyphicon-heart"></i></span>
-		    {{star-rating rating=festival.rating}}
+		  <li class="list-group-item">
+			<span class="badge list-group-item-info"><span><img src="http://www.ember-power-select.com/flags/{{festival.country-code}}.svg" class="icon-flag" alt="{{festival.country}}"></span></span>
+		    {{festival.country}}
 		  </li>
-			<li class="list-group-item" style="opacity:0.6">
-		    <span class="badge list-group-item-warning"><i class="glyphicon glyphicon-eur"></i></span>
-		    {{star-rating rating=festival.price}}
+			<li class="list-group-item">
+		    <span class="badge list-group-item-info"><i class="glyphicon glyphicon-map-marker"></i></span>
+		    {{festival.city}}
+		  </li>
+			<li class="list-group-item">
+		    <span class="badge list-group-item-info"><i class="glyphicon glyphicon-calendar"></i></span>
+		    {{moment-to-now festival.fechaDesde}}
+		  </li>
+			<li class="list-group-item">
+		    <span class="badge list-group-item-success"><i class="glyphicon glyphicon-thumbs-up"></i></span>
+		    {{festival.fechaLimite}}
 		  </li>
 		</ul>
-
-
-
-
-
 
 
 	</div>

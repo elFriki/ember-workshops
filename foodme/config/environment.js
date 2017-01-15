@@ -5,7 +5,14 @@ module.exports = function(environment) {
         modulePrefix: 'foodme',
         environment: environment,
         rootURL: '/',
-        locationType: 'hash',
+        locationType: 'auto',
+        moment: {
+          outputFormat: 'LL',
+          allowEmpty: true, // default: false
+          defaultFormat: 'DD.MM.YYYY',
+          includeLocales: true
+        },
+
         EmberENV: {
             FEATURES: {
                 // Here you can enable experimental features on an ember canary build
@@ -16,6 +23,14 @@ module.exports = function(environment) {
         APP: {
             // Here you can pass flags/options to your application instance
             // when it is created
+            moment: {
+      				outputFormat: 'L',
+      				// To cherry-pick specific locale support into your application.
+      				// Full list of locales: https://github.com/moment/moment/tree/2.10.3/locale
+      				allowEmpty: true, // default: false
+      				defaultFormat: 'DD.MM.YYYY',
+      				includeLocales: true
+      			}
         },
 
         i18n: {

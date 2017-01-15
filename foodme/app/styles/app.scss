@@ -3,6 +3,8 @@
 
 body {
   background:radial-gradient(ellipse closest-side, orange, yellow 5%, #1E90FF 50%, white);
+  background-repeat:no-repeat;
+  background-size: cover;
 }
 
 .navbar-nav>li.for-button {
