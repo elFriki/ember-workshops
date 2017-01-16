@@ -68,19 +68,15 @@
 		<div class="col-md-3" >
 			<ul class="list-group">
 				<li class="list-group-item">
-					<span class="badge"><span><img src="http://www.ember-power-select.com/flags/gb.svg" class="icon-flag" alt="{{festival.country}}"></span></span>
 					<strong>{{link-to artist.name 'artists.detail' artist}}</strong>
 				</li>
 				<li class="list-group-item">
-				<span class="badge"><i class="glyphicon glyphicon-music"></i></span>
-				<a target="_blank" class="btn btn-default" href="{{artist.urlspotify}}">
-					<span class="glyphicon glyphicon-headphones"></span> spotify
+					<span class="badge"><span><img src="http://www.ember-power-select.com/flags/gb.svg" class="icon-flag" alt="{{festival.country}}"></span></span>
+				<a target="_blank" href="{{artist.urlspotify}}" class="icon-flag">
+					<img alt="spotify" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNjcuNSAxNjcuNSI+PHBhdGggc3R5bGU9ImZpbGw6IzFFRDc2MCIgZD0iTTgzLjcgMEMzNy41IDAgMCAzNy41IDAgODMuN2MwIDQ2LjMgMzcuNSA4My43IDgzLjcgODMuNyA0Ni4zIDAgODMuNy0zNy41IDgzLjctODMuN1MxMzAgMCA4My43IDB6TTEyMiAxMjAuOGMtMS40IDIuNS00LjYgMy4yLTcgMS43LTE5LjgtMTItNDQuNS0xNC43LTczLjctOC0yLjguNS01LjYtMS4yLTYuMi00LS4yLTIuOCAxLjUtNS42IDQtNi4yIDMyLTcuMyA1OS42LTQuMiA4MS42IDkuMyAyLjYgMS41IDMuNCA0LjcgMS44IDcuMnpNMTMyLjUgOThjLTIgMy02IDQtOSAyLjItMjIuNS0xNC01Ni44LTE4LTgzLjQtOS44LTMuMiAxLTctMS04LTQuM3MxLTcgNC42LThjMzAuNC05IDY4LjItNC41IDk0IDExIDMgMiA0IDYgMiA5em0xLTIzLjhjLTI3LTE2LTcxLjYtMTcuNS05Ny40LTkuNy00IDEuMy04LjItMS05LjUtNS4yLTEuMy00IDEtOC41IDUuMi05LjggMjkuNi05IDc4LjgtNy4yIDEwOS44IDExLjIgMy43IDIuMiA1IDcgMi43IDEwLjctMiAzLjgtNyA1LTEwLjYgMi44eiIvPjwvc3ZnPg==">
 				</a>
-			  </li>
-				<li class="list-group-item">
-				<span class="badge"><i class="glyphicon glyphicon-film"></i></span>
-				<a target="_blank" class="btn btn-default" href="{{artist.urlyoutube}}">
-					<span class="glyphicon glyphicon-facetime-video"></span> youtube
+				<a target="_blank" href="{{artist.urlyoutube}}">
+					<img alt="YouTube" src="https://www.youtube.com/yt/img/logo_1x.png" srcset="/yt/img/logo_2x.png 2x">
 				</a>
 			  </li>
 			</ul>
