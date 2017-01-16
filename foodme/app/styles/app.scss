@@ -33,26 +33,27 @@ nav {
   color: rgba(15, 69, 5, 0.93);
 }
 .navbar-brand {
-  padding-top: 30px;
+  //padding-top: 30px;
   font-size: 22px;
   font-weight: 300;
-  color: rgba(15, 69, 5, 0.20);
-  background-color: white;
-  text-shadow: 2px 2px silver;
+  //color: rgba(15, 69, 5, 0.20);
+  //background-color: white;
+  text-shadow: 1px 1px white;
 }
 #custom-bootstrap-menu.navbar-default {
     font-size: 18px;
     background-color: rgba(34, 168, 99, 0.77);
     background: -webkit-linear-gradient(top, rgba(31, 156, 81, 0.11) 0%, rgba(34, 168, 99, 0.77) 100%);
-    background: linear-gradient(to bottom, rgba(31, 156, 81, 0.11) 0%, rgba(34, 168, 99, 0.77) 100%);
+    background: linear-gradient(to bottom, transparent 0%, rgba(34, 168, 99, 0.77) 100%);
     border-width: 0px;
     border-radius: 10px;
 }
 #custom-bootstrap-menu.navbar-default .navbar-nav>li>a {
     color: rgba(15, 69, 5, 0.9);
-    background-color: rgba(31, 156, 81, 0.11);
-    background: -webkit-linear-gradient(top, rgba(34, 168, 99, 0.71) 0%, rgba(31, 156, 81, 0.11) 100%);
-    background: linear-gradient(to bottom, rgba(34, 168, 99, 0.71) 0%, rgba(31, 156, 81, 0.11) 100%);
+    text-shadow: 1px 1px white;
+    background-color: rgba(34, 168, 99, 0.77);
+    background: -webkit-linear-gradient(top, rgba(31, 156, 81, 0.11) 0%, rgba(34, 168, 99, 0.77) 100%);
+    background: linear-gradient(to bottom, rgba(31, 156, 81, 0.11) 0%, rgba(34, 168, 99, 0.77) 100%);
 }
 #custom-bootstrap-menu.navbar-default .navbar-nav>li>a:hover,
 #custom-bootstrap-menu.navbar-default .navbar-nav>li>a:focus {
@@ -85,8 +86,9 @@ nav {
 }
 
 .jumbotron {
-    background: linear-gradient(-50deg, navy, lightblue 80%, navy);
-    color: white;
+    background: linear-gradient(-50deg, rgba(31, 156, 81, 0.81), rgba(31, 156, 81, 0.20) 80%, rgba(31, 156, 81, 0.61));
+    color: darkgreen;
+    text-shadow: 1px 1px white;
     padding-bottom: 80px;
 }
 
@@ -100,7 +102,7 @@ nav {
 }
 
 .jumbotron p {
-    color: white;
+    color: darkgreen;
     max-width: 75%;
     margin: 1em auto 2em;
 }
@@ -138,13 +140,13 @@ nav {
   display: block;
   padding: 10px 15px;
   margin-bottom: -1px;
-  background-color: #ffffff;
-  border: 1px solid #dddddd;
+  background-color: rgba(31, 156, 81, 0.10);
+  border: 1px solid rgb(31, 156, 81);
 }
 
 .list-group-item:first-child {
-  border-top-right-radius: 4px;
-  border-top-left-radius: 4px;
+  border-top-right-radius: 30px;
+  border-top-left-radius: 30px;
 }
 
 .list-group-item:last-child {
@@ -154,6 +156,8 @@ nav {
 }
 
 .list-group-item > .badge {
+  color: darkgreen;
+  background-color: rgba(31, 156, 81, 0.30);
   float: right;
 }
 
@@ -172,7 +176,7 @@ a.list-group-item .list-group-item-heading {
 a.list-group-item:hover,
 a.list-group-item:focus {
   text-decoration: none;
-  background-color: #f5f5f5;
+  background-color: rgba(31, 156, 81, 0.98);
 }
 
 .list-group-item.active,
@@ -180,8 +184,8 @@ a.list-group-item:focus {
 .list-group-item.active:focus {
   z-index: 2;
   color: #ffffff;
-  background-color: #428bca;
-  border-color: #428bca;
+  background-color: rgb(31, 156, 81);
+  border-color: rgb(31, 156, 81);
 }
 
 .list-group-item.active .list-group-item-heading,
@@ -199,7 +203,7 @@ a.list-group-item:focus {
 
 .well {
   color: rgba(15, 69, 5, 0.93);
-  background:linear-gradient(-50deg, navy, lightblue 80%, navy);
+  //background:linear-gradient(-50deg, navy, lightblue 80%, navy);
   background-color: rgba(34, 168, 99, 0.77);
   background: -webkit-linear-gradient(-50deg, rgba(31, 156, 81, 0.11) 10%, rgba(34, 168, 99, 0.77) 80%);
   background: linear-gradient(-50deg, rgba(31, 156, 81, 0.11) 10%, rgba(34, 168, 99, 0.77) 80%);

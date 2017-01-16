@@ -1,1 +1,53 @@
+<div class="container-fluid">
+  <h1><span><i class="glyphicon glyphicon-backward"></i> {{link-to (t 'artists') 'artists'}}</span></h1>
+  <h3><span><img src="http://www.ember-power-select.com/flags/gb.svg" class="icon-flag" alt="{{artist.country}}"></span> {{model.name}}</h3>
+
+<div class="col-md-2">
+
+	<ul class="list-group">
+    <li class="list-group-item active">albums</li>
+	{{#each model.album as |album| }}
+    <li class="list-group-item">
+	    <span class="badge">{{album.year}}</span>
+	    <strong>{{capitalize album.name}}</strong>
+	  </li>
+  {{/each}}
+	</ul>
+  {{#each model.festival as |festival| }}
+		<ul class="list-group">
+			<li class="list-group-item">
+				<span class="badge"><i class="glyphicon glyphicon-pushpin"></i></span>
+				<strong>{{link-to festival.name 'festivals.detail' festival}}</strong>
+			</li>
+		  <li class="list-group-item">
+			<span class="badge"><span><img src="http://www.ember-power-select.com/flags/{{festival.country-code}}.svg" class="icon-flag" alt="{{festival.country}}"></span></span>
+		    {{festival.country}}
+		  </li>
+			<li class="list-group-item">
+		    <span class="badge"><i class="glyphicon glyphicon-map-marker"></i></span>
+		    {{festival.city}}
+		  </li>
+			<!--li class="list-group-item">
+		    <span class="badge"><i class="glyphicon glyphicon-calendar"></i></span>
+		    {{moment-from-now festival.fechaDesde}} {{moment-format festival.fechaHasta}}
+		  </li>
+			<li class="list-group-item">
+		    <span class="badge"><i class="glyphicon glyphicon-thumbs-up"></i></span>
+		    {{moment-format festival.fechaLimite}}
+		  </li-->
+		</ul>
+  {{/each}}
+
+</div>
+
+<div class="col-md-10">
+  <iframe class="well" src="{{model.urlspotify}}"></iframe>
+</div>
+<div class="col-md-10">
+  <iframe class="well" src="{{model.urlyoutube}}"></iframe>
+</div>
+
+
+
+</div>
 {{outlet}}

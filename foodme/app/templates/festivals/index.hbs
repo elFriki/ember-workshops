@@ -3,28 +3,28 @@
 		<ul class="list-group">
 			{{#if cienXcien}}
 			<li class="list-group-item active">
-				<span class="badge list-group-item-warning">
+				<span class="badge">
 					<i class="glyphicon glyphicon-filter"></i>
 				</span>
 		    {{filteredFestivals.length}} {{t "festivals"}}
 		  </li>
 			{{else}}
 		  <li class="list-group-item">
-				<span class="badge list-group-item-warning">
+				<span class="badge">
 					<i class="glyphicon glyphicon-filter"></i>
 				</span>
-				<span class="badge btn btn-danger">
+				<span class="badge btn">
 					<i class="glyphicon glyphicon-remove" {{action 'clear'}}></i>
 				</span>
 		    <strong>{{filteredFestivals.length}} {{t "festivals"}}</strong>
 		  </li>
 			{{/if}}
 			<li class="list-group-item">
-				<span class="badge list-group-item-warning">
+				<span class="badge">
 					<i class="glyphicon glyphicon-sort-by-alphabet-alt"></i>
 				</span>
 				{{#if filterName}}
-					<span class="badge btn btn-danger">
+					<span class="badge btn">
 					<i class="glyphicon glyphicon-remove" {{action 'clearName'}}></i>
 					</span>
 				{{/if}}
@@ -56,7 +56,7 @@
 				<div class="progress">
 				  <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: {{porcentaje}}%">
 				    <span class="sr-only"></span>{{#if cienXcien}}{{porcentaje}}%{{/if}}
-				  </div><span class="badge list-group-item-warning">{{porcentaje}}%</span>
+				  </div><span class="badge">{{porcentaje}}%</span>
 				</div>
 			</li>
 		</ul>
@@ -68,23 +68,23 @@
 	<div class="col-md-3" >
 		<ul class="list-group">
 			<li class="list-group-item">
-				<span class="badge list-group-item-info"><i class="glyphicon glyphicon-pushpin"></i></span>
+				<span class="badge"><i class="glyphicon glyphicon-pushpin"></i></span>
 				<strong>{{link-to festival.name 'festivals.detail' festival}}</strong>
 			</li>
 		  <li class="list-group-item">
-			<span class="badge list-group-item-info"><span><img src="http://www.ember-power-select.com/flags/{{festival.country-code}}.svg" class="icon-flag" alt="{{festival.country}}"></span></span>
+			<span class="badge"><span><img src="http://www.ember-power-select.com/flags/{{festival.country-code}}.svg" class="icon-flag" alt="{{festival.country}}"></span></span>
 		    {{festival.country}}
 		  </li>
 			<li class="list-group-item">
-		    <span class="badge list-group-item-info"><i class="glyphicon glyphicon-map-marker"></i></span>
+		    <span class="badge"><i class="glyphicon glyphicon-map-marker"></i></span>
 		    {{festival.city}}
 		  </li>
 			<li class="list-group-item">
-		    <span class="badge list-group-item-info"><i class="glyphicon glyphicon-calendar"></i></span>
+		    <span class="badge"><i class="glyphicon glyphicon-calendar"></i></span>
 		    {{moment-from-now festival.fechaDesde}} {{moment-format festival.fechaHasta}}
 		  </li>
 			<li class="list-group-item">
-		    <span class="badge list-group-item-success"><i class="glyphicon glyphicon-thumbs-up"></i></span>
+		    <span class="badge"><i class="glyphicon glyphicon-thumbs-up"></i></span>
 		    {{moment-format festival.fechaLimite}}
 		  </li>
 		</ul>

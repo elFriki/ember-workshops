@@ -4,6 +4,10 @@ export default Ember.Controller.extend({
 
 	appName: 'moldingFest',
 
+	i18n: Ember.inject.service(),
+
+	moment: Ember.inject.service(),
+
 	menuLinks: [/*{
 		label: 'restaurants',
 		url: 'restaurants'

@@ -3,6 +3,7 @@
   "id": 8,
   "name": "Two door cinema club",
   "country": "UK",
+  "country-code": "gb",
   "publicado": "S",
   "image": null,
   "album": [
@@ -18,6 +19,7 @@
     "name": "Nos Alive",
     "city": "Lisboa",
     "country": "Portugal",
+    "country-code": "pt",
     "publicado": "N",
     "fechaDesde": 1542409200000,
     "fechaHasta": 1542409200000,
@@ -28,6 +30,7 @@
     "name": "Primavera Sound",
     "city": "Barcelona",
     "country": "España",
+    "country-code": "es",
     "publicado": "S",
     "fechaDesde": 1542409200000,
     "fechaHasta": 1542409200000,

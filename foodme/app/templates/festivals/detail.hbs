@@ -1,8 +1,5 @@
 <div class="container-fluid">
-<div class="panel panel-primary">
-
-  <span class="badge list-group-item-danger"><i class="glyphicon glyphicon-backward"></i> <strong>{{link-to (t 'festivals') 'festivals'}}</strong></span>
-
+<h1><span><i class="glyphicon glyphicon-backward"></i> {{link-to (t 'festivals') 'festivals'}}</span></h1>
 
 <div class="panel-body">
 
@@ -15,17 +12,17 @@
         <span class="badge list-group-item-info"><span><img src="http://www.ember-power-select.com/flags/{{model.country-code}}.svg" class="icon-flag" alt="{{festival.country}}"></span></span>
 		    <strong>{{capitalize model.country}}</strong>
 		  </li>
-      <li class="list-group-item" style="opacity:0.6">
+      <li class="list-group-item">
 		    <span class="badge list-group-item-info"><i class="glyphicon glyphicon-map-marker"></i></span>
 		    <strong>{{capitalize model.city}}</strong>
 		  </li>
       <li class="list-group-item">
 		    <span class="badge list-group-item-info"><i class="glyphicon glyphicon-calendar"></i></span>
-        {{moment-calendar model.fechaDesde}} - {{moment-calendar model.fechaHasta}}
+        {{moment-from-now model.fechaDesde}} {{moment-format model.fechaHasta}}
 		  </li>
 			<li class="list-group-item">
 		    <span class="badge list-group-item-success"><i class="glyphicon glyphicon-thumbs-up"></i></span>
-		    {{moment-calendar model.fechaLimite}}
+        {{moment-format model.fechaLimite}}
 		  </li>
       <!--li class="list-group-item" style="opacity:0.6">
 		    <span class="badge list-group-item-info"><i class="glyphicon glyphicon-heart"></i></span>
@@ -68,6 +65,5 @@
 </div>
 -->
 
-</div>
 </div>
 </div>

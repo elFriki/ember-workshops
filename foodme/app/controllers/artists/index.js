@@ -1,78 +1,87 @@
 import Ember from 'ember';
 
-const CUISINE_OPTIONS = [
-    { name: 'african', title: 'African' },
-    { name: 'american', title: 'American' },
-    { name: 'barbecue', title: 'Barbecue' },
-    { name: 'cafe', title: 'Cafe' },
-    { name: 'chinese', title: 'Chinese' },
-    { name: 'czech/slovak', title: 'Czech / Slovak' },
-    { name: 'german', title: 'German' },
-    { name: 'indian', title: 'Indian' },
-    { name: 'japanese', title: 'Japanese' },
-    { name: 'mexican', title: 'Mexican' },
-    { name: 'pizza', title: 'Pizza' },
-    { name: 'thai', title: 'Thai' },
-    { name: 'vegetarian', title: 'Vegetarian' }
-];
-
 export default Ember.Controller.extend({
-
-    CUISINE_OPTIONS,
 
     /**
      * Filter criterias.
      */
-    filterCuisins: [],
     filterRating: null,
     filterName: null,
 
     /**
      * Filter function.
      */
-    filteredRestaurants: Ember.computed('model', 'filterCuisins', 'filterRating', 'filterName', function() {
-        let filteredRestaurants = this.get('model');
+    filteredArtists: Ember.computed('model', 'filterRating', 'filterName', function() {
+        let filteredArtists = this.get('model');
 
-        const filterCuisins = this.get('filterCuisins');
         const filterRating = this.get('filterRating');
         const filterName = this.get('filterName');
 
-        // Filter by cuisine
-        if (Ember.isPresent(filterCuisins)) {
-            filteredRestaurants = filteredRestaurants.filter((item) =>
-                filterCuisins.mapBy('name').includes(item.cuisine)
-            );
-        }
-
         // Filter by rating
         if (filterRating) {
-            filteredRestaurants = filteredRestaurants.filterBy('rating', filterRating);
+            filteredArtists = filteredArtists.filterBy('rating', filterRating);
         }
 
         // Filter by name
         if (filterName) {
-            filteredRestaurants = filteredRestaurants.filter((restaurant) =>
+            filteredArtists = filteredArtists.filter((restaurant) =>
             	restaurant.name.toLowerCase().includes(filterName.toLowerCase())
             );
         }
 
-        return filteredRestaurants;
+        return filteredArtists;
+    }),
+
+    cienXcien: Ember.computed('porcentaje', function(){
+      if (this.get('porcentaje') === 100) {
+        return true;
+      }
+      return false;
+    }),
+
+    porcentaje: Ember.computed('filteredArtists', 'model',
+      function(){
+        let showing = this.get('filteredArtists').length;
+        let total = this.get('model').length;
+        if (total) {
+          return Math.round((showing * 100) / total);
+        } else {
+          return total;
+        }
     }),
 
     actions: {
 
+      clearRating() {
+        this.set('filterRating', null);
+        //this.set('filteredFestivals', this.get('model'));
+      },
+
+      clearPrice() {
+        this.set('filterPrice', null);
+        //this.set('filteredFestivals', this.get('model'));
+      },
+
+      clearName() {
+        this.set('filterName', null);
+        //this.set('filteredFestivals', this.get('model'));
+      },
+
     	clear() {
-    		this.set('filterCuisins', []);
+    		this.set('filterPrice', null);
     		this.set('filterRating', null);
     		this.set('filterName', null);
-    		this.set('filteredRestaurants', this.get('model'));
+    		//this.set('filteredFestivals', this.get('model'));
     	},
 
-        updateRating(stars) {
-            this.set('filterRating', stars.rating);
-        }
+      updateRating(stars) {
+          this.set('filterRating', stars.rating);
+      },
+
+      updatePrice(stars) {
+          this.set('filterPrice', stars.rating);
+      }
 
     }
-
 
 });
