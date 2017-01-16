@@ -16,12 +16,15 @@ export default Ember.Component.extend({
 
 	i18n: Ember.inject.service(),
 
+	moment: Ember.inject.service(),
+
 	languages,
 
 	selectedLanguage: languages[0],
 
 	onSelectedLanguageChange: Ember.observer('selectedLanguage', function() {
 		this.set('i18n.locale', this.get('selectedLanguage.code'));
+		this.get('moment').setLocale(this.get('selectedLanguage.code'));
 	}),
 
 	actions:  {

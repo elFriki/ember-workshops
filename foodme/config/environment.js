@@ -10,7 +10,9 @@ module.exports = function(environment) {
           outputFormat: 'LL',
           allowEmpty: true, // default: false
           defaultFormat: 'DD.MM.YYYY',
-          includeLocales: true
+          defaultLocale: 'es',
+          includeLocales: ['es', 'en', 'fr', 'pt'],
+          includeTimezone: 'all'
         },
 
         EmberENV: {
@@ -29,7 +31,9 @@ module.exports = function(environment) {
       				// Full list of locales: https://github.com/moment/moment/tree/2.10.3/locale
       				allowEmpty: true, // default: false
       				defaultFormat: 'DD.MM.YYYY',
-      				includeLocales: true
+              defaultLocale: 'es',
+      				includeLocales: ['es', 'en', 'fr', 'pt'],
+              includeTimezone: 'all'
       			}
         },
 

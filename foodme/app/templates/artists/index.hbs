@@ -15,11 +15,6 @@
 				{{input value=filterName placeholder=(t 'name') class="form-control"}}
 			</div>
 
-			<div class="panel-body">
-				<table><th><td><i class="label label-info"><i class="glyphicon glyphicon-heart"></i></i></td><td>{{star-rating rating=filterRating on-click='updateRating'}}</td><td><span class="label label-info">{{capitalize restaurant.cuisine}}</span></td></th></table>
-				<table><th><td><i class="label label-danger"><i class="glyphicon glyphicon-eur"></i></i></td><td>{{star-rating rating=filterRating on-click='updateRating'}}</td></th></table>
-
-			</div>
 
 
 			<div class="panel-footer">
@@ -42,7 +37,7 @@
 				{{#each filteredRestaurants as |restaurant| }}
 					<div class="media">
 						<a class="media-left media-middle">
-							<img class="media-object" src={{restaurant-img restaurant.id}} width="64" height="64">
+							<video class="media-object" src='https://www.youtube.com/embed/YXwYJyrKK5A' width="480" height="480"></video>
 						</a>
 						<div class="media-body">
 							{{link-to restaurant.name 'restaurants.detail' restaurant}}

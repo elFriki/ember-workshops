@@ -1,10 +1,7 @@
 <div class="container-fluid">
-<div class="panel panel-primary" style="background-image:url('{{restaurant-img model.id}}'); background-repeat:no-repeat; background-size: cover;">
+<div class="panel panel-primary">
 
-
-  <a class="btn btn-primary" href="#/festivals" style="opacity:0.6">
-    <span class="badge"><i class="glyphicon glyphicon-backward"></i> {{model.name}}</span>
-  </a>
+  <span class="badge list-group-item-danger"><i class="glyphicon glyphicon-backward"></i> <strong>{{link-to (t 'festivals') 'festivals'}}</strong></span>
 
 
 <div class="panel-body">
@@ -12,27 +9,34 @@
 <div class="col-md-5">
 
 	<ul class="list-group">
-    <li class="list-group-item active" style="opacity:0.6"><strong>{{model.name}}</strong></li>
-    <li class="list-group-item" style="opacity:0.9"><strong>{{model.description}}</strong></li>
+    <li class="list-group-item active"><strong>{{model.name}}</strong></li>
 
-    <li class="list-group-item" style="opacity:0.6">
-		    <span class="badge list-group-item-info"><i class="glyphicon glyphicon-tag"></i></span>
-		    <strong>{{capitalize model.cuisine}}</strong>
+    <li class="list-group-item">
+        <span class="badge list-group-item-info"><span><img src="http://www.ember-power-select.com/flags/{{model.country-code}}.svg" class="icon-flag" alt="{{festival.country}}"></span></span>
+		    <strong>{{capitalize model.country}}</strong>
 		  </li>
       <li class="list-group-item" style="opacity:0.6">
 		    <span class="badge list-group-item-info"><i class="glyphicon glyphicon-map-marker"></i></span>
-		    <strong>{{capitalize model.location}}</strong>
+		    <strong>{{capitalize model.city}}</strong>
 		  </li>
-      <li class="list-group-item" style="opacity:0.6">
+      <li class="list-group-item">
+		    <span class="badge list-group-item-info"><i class="glyphicon glyphicon-calendar"></i></span>
+        {{moment-calendar model.fechaDesde}} - {{moment-calendar model.fechaHasta}}
+		  </li>
+			<li class="list-group-item">
+		    <span class="badge list-group-item-success"><i class="glyphicon glyphicon-thumbs-up"></i></span>
+		    {{moment-calendar model.fechaLimite}}
+		  </li>
+      <!--li class="list-group-item" style="opacity:0.6">
 		    <span class="badge list-group-item-info"><i class="glyphicon glyphicon-heart"></i></span>
 		    <strong>{{star-rating rating=model.rating}}</strong>
 		  </li>
       <li class="list-group-item" style="opacity:0.6">
 		    <span class="badge list-group-item-info"><i class="glyphicon glyphicon-eur"></i></span>
 		    <strong>{{star-rating rating=model.price}}</strong>
-		  </li>
+		  </li-->
 
-
+<!--
 		{{#each model.days as |day|}}
     <li class="list-group-item" style="opacity:0.6">
       <span class="badge list-group-item-info"><i class="glyphicon glyphicon-time"></i></span>
@@ -41,11 +45,12 @@
 	    <strong>{{capitalize (t (concat 'weekDays.' (weekday day)))}}</strong>
 	  </li>
 		{{/each}}
+-->
 	</ul>
 
 </div>
 
-
+<!--
 <div class="col-md-7">
 
 	<ul class="list-group">
@@ -61,7 +66,7 @@
 	</ul>
 
 </div>
-
+-->
 
 </div>
 </div>

@@ -67,11 +67,10 @@
 {{#each filteredFestivals as |festival| }}
 	<div class="col-md-3" >
 		<ul class="list-group">
-			<a class="list-group-item">
-				<strong>{{festival.name}}</strong>
+			<li class="list-group-item">
 				<span class="badge list-group-item-info"><i class="glyphicon glyphicon-pushpin"></i></span>
-				{{!link-to festival.name 'festivals.detail' festival}}
-			</a>
+				<strong>{{link-to festival.name 'festivals.detail' festival}}</strong>
+			</li>
 		  <li class="list-group-item">
 			<span class="badge list-group-item-info"><span><img src="http://www.ember-power-select.com/flags/{{festival.country-code}}.svg" class="icon-flag" alt="{{festival.country}}"></span></span>
 		    {{festival.country}}
@@ -82,11 +81,11 @@
 		  </li>
 			<li class="list-group-item">
 		    <span class="badge list-group-item-info"><i class="glyphicon glyphicon-calendar"></i></span>
-		    {{moment-to-now festival.fechaDesde}}
+		    {{moment-from-now festival.fechaDesde}} {{moment-format festival.fechaHasta}}
 		  </li>
 			<li class="list-group-item">
 		    <span class="badge list-group-item-success"><i class="glyphicon glyphicon-thumbs-up"></i></span>
-		    {{festival.fechaLimite}}
+		    {{moment-format festival.fechaLimite}}
 		  </li>
 		</ul>
 

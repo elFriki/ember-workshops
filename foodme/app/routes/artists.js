@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
-const host = 'https://raw.githubusercontent.com/elFriki/ember-workshops/master/';
-const restaurantsUrl = `${host}resources/restaurants.json`;
+const host = 'https://raw.githubusercontent.com/elFriki/ember-workshops/final/';
+const restaurantsUrl = `${host}resources/artists.json`;
 
 export default Ember.Route.extend({
 
