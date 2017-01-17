@@ -4,6 +4,8 @@ export default Ember.Controller.extend({
 
 	appName: 'moldingFest',
 
+	logado: false,
+
 	i18n: Ember.inject.service(),
 
 	moment: Ember.inject.service(),

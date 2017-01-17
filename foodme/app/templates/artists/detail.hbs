@@ -12,7 +12,13 @@
     </div>
 
     <div class="col-md-3">
-      <div class="container-fluid">Aquí los anuncios y publicidad<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/></div>
+{{#if application.logado}}
+<div class="container-fluid">Aquí los anuncios y publicidad<br/>para el perfil logado<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/></div>
+{{else}}
+<div class="container-fluid">Aquí los anuncios y publicidad<br/>para el perfil público<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/></div>
+{{/if}}
+
+
     </div>
     <div class="col-md-3">
       <ul class="list-group">
@@ -45,16 +51,8 @@
 			</li>
 		  <li class="list-group-item">
 			<span class="badge"><span><img src="http://www.ember-power-select.com/flags/{{festival.country-code}}.svg" class="icon-flag" alt="{{festival.country}}"></span></span>
-		    {{festival.country}}
+		    {{festival.city}}, {{festival.country}}
 		  </li>
-			<li class="list-group-item">
-		    <span class="badge"><i class="glyphicon glyphicon-map-marker"></i></span>
-		    {{festival.city}}
-		  </li>
-			<!--li class="list-group-item">
-		    <span class="badge"><i class="glyphicon glyphicon-calendar"></i></span>
-		    {{moment-from-now festival.fechaDesde}} {{moment-format festival.fechaHasta}}
-		  </li-->
 			<li class="list-group-item">
 		    <span class="badge"><i class="glyphicon glyphicon-thumbs-up"></i></span>
 		    {{moment-format festival.fechaLimite}}

@@ -27,6 +27,11 @@
 
     	{{! ChangeLanguage}}
 		<ul class="nav navbar-nav navbar-right">
+      {{#if logado}}
+      <li class="for-button"><button class="btn btn-danger"><i class="glyphicon glyphicon-off"></i></button></li>
+        {{else}}
+        <li class="for-button"><button class="btn btn-success"><i class="glyphicon glyphicon-off"></i></button></li>
+      {{/if}}
 			<li class="for-button">
 				{{#power-select
 					selected=selectedLanguage
